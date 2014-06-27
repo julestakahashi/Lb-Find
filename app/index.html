@@ -1,19 +1,36 @@
 <!DOCTYPE html>
-<html lang=”en”>
+<html lang=”en” data-ng-app="longboardersApp">
 <head>
     <meta charset=”utf-8”>
-    <title>Longboard Buddy Finder</title>
+    <title>Longboarder Buddy Finder in Angular</title>
     <meta name=”description” content=”Find Longboarders near you!”>
+    <link rel="stylesheet" href="css/main.css" type="text/css" media="all"/>
+
 </head>
-<body>
+<body data-ng-controller="LongboardersController">
+
+<table>
+    <tr>
+        <th>username</th>
+        <th>location</th>
+        <th>age</th>
+        <th>discipline</th>
+    </tr>
+    <tr data-ng-repeat="longboarder in longboarders">
+        <td>{{ longboarder.username }}</td>
+        <td>{{ longboarder.location }}</td>
+        <td>{{ longboarder.age }}</td>
+        <td>{{ longboarder.discipline }}</td>
+    </tr>
+</table>
 
 <footer>
 </footer>
-
-<script src="/app/css/main.css"></script>
-<script src="/app/js/main.js"></script>
-<script src="https://cdn.firebase.com/js/client/1.0.17/firebase.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+<!--<script src="/vendor/angular-route.min.js"></script>-->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/controllers/longboardersController.js"></script>
+<!--<script src="/app/controllers/longboardersController.js"></script>-->
 </body>
 
 </html>
