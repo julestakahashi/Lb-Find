@@ -1,4 +1,4 @@
-(function() {
+
     var LongboardersController = function LongboardersController($scope) {
         $scope.longboarders = [
             {"username": 'Dick Buttkiss', "location": 'Portland, OR', "age": 99, "discipline": ['downhill', 'dance']},
@@ -41,4 +41,3 @@
         .controller('LongboardersController', LongboardersController);
 
 
-}());

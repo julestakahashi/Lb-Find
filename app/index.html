@@ -4,11 +4,12 @@
     <meta charset=”utf-8”>
     <title>Longboarder Buddy Finder in Angular</title>
     <meta name=”description” content=”Find Longboarders near you!”>
-    <link rel="stylesheet" href="css/main.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="/css/main.css" type="text/css" media="all"/>
 
 </head>
 <body data-ng-controller="LongboardersController">
 
+<h1>Longboarder Info</h1>
 <table>
     <tr>
         <th>username</th>
@@ -16,21 +17,21 @@
         <th>age</th>
         <th>discipline</th>
     </tr>
-    <tr data-ng-repeat="longboarder in longboarders">
+    <tr data-ng-repeat="longboarder in longboarders | filter:longboardersFilter | orderBy:'username'" >
         <td>{{ longboarder.username }}</td>
         <td>{{ longboarder.location }}</td>
         <td>{{ longboarder.age }}</td>
         <td>{{ longboarder.discipline }}</td>
     </tr>
 </table>
-
-<footer>
-</footer>
-<!--<script src="/vendor/angular-route.min.js"></script>-->
+<div id=""search>
+    Search: <input type="text" ng-model="longboardersFilter.username" />
+</div>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+<script src="/vendor/angular-route.js"></script>
 <script src="/js/main.js"></script>
 <script src="/controllers/longboardersController.js"></script>
-<!--<script src="/app/controllers/longboardersController.js"></script>-->
+
 </body>
 
 </html>
