@@ -12,12 +12,12 @@
 <h1>Longboarder Info</h1>
 <table>
     <tr>
-        <th>username</th>
-        <th>location</th>
-        <th>age</th>
-        <th>discipline</th>
+        <th ng-click="sortBy='username';reverse=!reverse">username</th>
+        <th ng-click="sortBy='location';reverse=!reverse">location</th>
+        <th ng-click="sortBy='age';reverse=!reverse">age</th>
+        <th ng-click="sortBy='discipline';reverse=!reverse">discipline</th>
     </tr>
-    <tr data-ng-repeat="longboarder in longboarders | filter:longboardersFilter | orderBy:'username'" >
+    <tr data-ng-repeat="longboarder in longboarders | filter:longboardersFilter | orderBy:sortBy:reverse" >
         <td>{{ longboarder.username }}</td>
         <td>{{ longboarder.location }}</td>
         <td>{{ longboarder.age }}</td>
